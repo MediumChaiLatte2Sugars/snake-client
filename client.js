@@ -10,8 +10,12 @@ const connect = function () {
   
   conn.on("connect", () => {
     console.log("Successfully connected to game server");
-
+    
+    // Set name on successful connection
     conn.write("Name: MCL");
+
+    // Initial move
+    conn.write("Move: up");
   });
 
   conn.on("data", (data) => {
