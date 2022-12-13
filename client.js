@@ -16,6 +16,8 @@ const connect = function () {
 
     // Initial move
     conn.write("Move: up");
+    conn.write("Move: left");
+    conn.write("Move: right");
   });
 
   conn.on("data", (data) => {
