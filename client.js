@@ -15,9 +15,9 @@ const connect = function () {
     conn.write("Name: MCL");
 
     // Initial move
-    conn.write("Move: up");
-    setTimeout(() => conn.write("Move: left"), 50);
-    setTimeout(() => conn.write("Move: right"), 50);
+    setInterval(() => conn.write("Move: up"), 50);
+    // setTimeout(() => conn.write("Move: left"), 50);
+    // setTimeout(() => conn.write("Move: right"), 50);
   });
 
   conn.on("data", (data) => {
