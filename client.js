@@ -16,8 +16,8 @@ const connect = function () {
 
     // Initial move
     conn.write("Move: up");
-    conn.write("Move: left");
-    conn.write("Move: right");
+    setTimeout(() => conn.write("Move: left"), 50);
+    setTimeout(() => conn.write("Move: right"), 50);
   });
 
   conn.on("data", (data) => {
