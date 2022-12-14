@@ -1,4 +1,5 @@
 let connection;
+const { MESSAGES, MOVE_SET } = require("./constants");
 
 const setupInput = function(conn) {
   connection = conn;
@@ -12,38 +13,21 @@ const setupInput = function(conn) {
 };
 
 const handleUserInput = function(key) {
- 
-  switch (key){
-    case 'w':
-      connection.write("Move: up");
-      break;
-    case 'a':
-      connection.write("Move: left");
-      break;
-    case 's':
-      connection.write("Move: down");
-      break;
-    case 'd':
-      connection.write("Move: right");
-      break;
-    case 'l':
-      connection.write("Say: LOL");
-      break;
-    case 'g':
-      connection.write("Say: Hey!");
-      break;
-    case 'G':
-      connection.write("Say: Good game!");
-      break;
-    case 'o':
-      connection.write("Say: Wow!");
-      break;
-    case 'y':
-      connection.write("Say: Oof!");
-      break;
-    case '\u0003': // Exit sequence (Ctrl+c)
-      process.exit();
+  // Exit sequence handler (Ctrl+c)
+  if (key === '\u0003'){
+    process.exit();
   }
+
+  // Looks up appropriate key-binding for move, sends to server
+  if (MOVE_SET.hasOwnProperty(key)){
+    connection.write(MOVE_SET[key]);
+  }
+
+  // Looks up appropriate key-binding for message, sends to server
+  if (MESSAGES.hasOwnProperty(key)){
+    connection.write(MESSAGES[key]);
+  }
+  
 };
 
 module.exports = { setupInput }
