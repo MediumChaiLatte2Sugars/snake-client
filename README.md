@@ -8,8 +8,8 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["Sample image of gameplay"](#/assets/images/snake-final-ss.png)
-!["Sample end screen, after idling"](#/assets/images/snake-final-ss-2.png)
+!["Sample image of gameplay"](/assets/images/snake-final-ss.png)
+!["Sample end screen, after idling"](/assets/images/snake-final-ss-2.png)
 
 
 ## Getting Started
