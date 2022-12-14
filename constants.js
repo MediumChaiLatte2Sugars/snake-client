@@ -1,5 +1,6 @@
 const IP = "localhost";
 const PORT = 50541;
+const NAME = "Name: KM";
 
 const MOVE_SET = {
   w: "Move: up",
@@ -16,4 +17,4 @@ const MESSAGES = {
   G: "Say: Good game!",
 };
 
-module.exports = { IP, PORT, MOVE_SET, MESSAGES };
+module.exports = { IP, PORT, MOVE_SET, MESSAGES, NAME };
